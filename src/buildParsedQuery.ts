@@ -1,10 +1,10 @@
 import { ParsedQuery } from './types';
 
 const buildParsedQuery = <Size extends string | number | symbol>(
-  sizes: Record<Size, number>,
+  breakpoints: Record<Size, number>,
   { operator, size }: ParsedQuery<Size>,
 ): string => {
-  const value = sizes[size];
+  const value = breakpoints[size];
 
   if (operator === '<') {
     return `(max-width: ${value - 1}px)`;

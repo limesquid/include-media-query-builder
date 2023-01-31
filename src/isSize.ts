@@ -1,8 +1,8 @@
 const isSize = <Size extends string | number | symbol>(
-  sizes: Record<Size, number>,
+  breakpoints: Record<Size, number>,
   value: unknown,
 ): value is Size => {
-  return typeof value === 'string' && Object.keys(sizes).includes(value);
+  return typeof value === 'string' && Object.keys(breakpoints).includes(value);
 };
 
 export default isSize;

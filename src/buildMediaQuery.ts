@@ -2,12 +2,12 @@ import buildParsedQuery from './buildParsedQuery';
 import parseQuery from './parseQuery';
 
 const buildMediaQuery = <Size extends string | number | symbol>(
-  sizes: Record<Size, number>,
+  breakpoints: Record<Size, number>,
   queries: string[],
 ): string => {
   return queries
-    .map((query) => parseQuery(sizes, query))
-    .map((query) => buildParsedQuery(sizes, query))
+    .map((query) => parseQuery(breakpoints, query))
+    .map((query) => buildParsedQuery(breakpoints, query))
     .join(' and ');
 };
 

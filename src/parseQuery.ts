@@ -3,7 +3,7 @@ import isSize from './isSize';
 import { ParsedQuery } from './types';
 
 const parseQuery = <Size extends string | number | symbol>(
-  sizes: Record<Size, number>,
+  breakpoints: Record<Size, number>,
   query: string,
 ): ParsedQuery<Size> => {
   const matches = query.match(/^([<>]=?)(\w+)$/);
@@ -14,7 +14,7 @@ const parseQuery = <Size extends string | number | symbol>(
 
   const [, operator, size] = matches;
 
-  if (!isOperator(operator) || !isSize(sizes, size)) {
+  if (!isOperator(operator) || !isSize(breakpoints, size)) {
     throw new Error('Invalid query');
   }
 
