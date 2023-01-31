@@ -3,8 +3,9 @@ import parseQuery from './parseQuery';
 
 const buildMediaQuery = <Size extends string | number | symbol>(
   breakpoints: Record<Size, number>,
-  queries: string[],
+  query: string | string[],
 ): string => {
+  const queries = typeof query === 'string' ? [query] : query;
   return queries
     .map((query) => parseQuery(breakpoints, query))
     .map((query) => buildParsedQuery(breakpoints, query))
