@@ -1,0 +1,53 @@
+{
+  "name": "include-media-query-builder",
+  "version": "0.0.1",
+  "description": "Build include-media-like media queries in JavaScript",
+  "keywords": [
+    "include",
+    "media",
+    "query",
+    "builder",
+    "include-media",
+    "javascript",
+    "typescript"
+  ],
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "build/index.js",
+  "types": "build/types.d.ts",
+  "engines": {
+    "node": ">=16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limesquid/include-media-query-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/limesquid/include-media-query-builder/issues"
+  },
+  "homepage": "https://github.com/limesquid/include-media-query-builder#readme",
+  "files": [
+    "build/**"
+  ],
+  "np": {
+    "yarn": false
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --project .",
+    "clean": "rimraf build",
+    "prebuild": "npm run clean",
+    "prerelease": "npm run prettier && npm run build",
+    "prettier": "prettier --check src/",
+    "prettier:fix": "prettier --write src/",
+    "release": "np --no-tests"
+  },
+  "devDependencies": {
+    "np": "^7.6.3",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.4"
+  }
+}
