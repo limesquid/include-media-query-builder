@@ -1,3 +1,3 @@
 import { Operator } from './types';
 
-export const OPERATORS: Operator[] = ['<', '<=', '>=', '>'];
+export const OPERATORS: Operator[] = ['<', '<=', '>=', '>', '≤', '≥'];

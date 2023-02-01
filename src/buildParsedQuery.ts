@@ -14,11 +14,11 @@ const buildParsedQuery = <Size extends string | number | symbol>(
     return `(max-width: ${value}px)`;
   }
 
-  if (operator === '>=') {
+  if (operator === '>=' || operator === '≥') {
     return `(min-width: ${value}px)`;
   }
 
-  if (operator === '>') {
+  if (operator === '>' || operator === '≤') {
     return `(min-width: ${value + 1}px)`;
   }
 
