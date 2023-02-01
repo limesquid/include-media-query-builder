@@ -22,14 +22,12 @@ npm install include-media-query-builder --save
 import { buildMediaQuery } from 'include-media-query-builder';
 
 const sizes = {
-  xs: 576,
   s: 768,
   m: 992,
   l: 1200,
-  xl: 1400,
 };
 
-console.log(buildMediaQuery(sizes, ['<s'])); // (max-width: 767px)
-console.log(buildMediaQuery(sizes, ['>s', '<=m'])); // (min-width: 769px) and (max-width: 992px)
+console.log(buildMediaQuery(sizes, ['<s']));         // (max-width: 767px)
+console.log(buildMediaQuery(sizes, ['>s', '<=m']));  // (min-width: 769px) and (max-width: 992px)
 console.log(buildMediaQuery(sizes, ['>=s', '<=m'])); // (min-width: 768px) and (max-width: 992px)
 ```
