@@ -1,6 +1,6 @@
 {
   "name": "include-media-query-builder",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Build include-media-like media queries in JavaScript",
   "keywords": [
     "include",
