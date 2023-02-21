@@ -1,9 +1,14 @@
-import { ParsedQuery } from './types';
+import { isRawQuery, ParsedQuery, RawQuery } from './types';
 
 const buildParsedQuery = <Size extends string | number | symbol>(
   breakpoints: Record<Size, number>,
-  { operator, size }: ParsedQuery<Size>,
+  query: ParsedQuery<Size> | RawQuery,
 ): string => {
+  if (isRawQuery(query)) {
+    return query;
+  }
+
+  const { operator, size } = query;
   const value = breakpoints[size];
 
   if (operator === '<') {

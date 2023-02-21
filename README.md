@@ -27,7 +27,8 @@ const sizes = {
   l: 1200,
 };
 
-console.log(buildMediaQuery(sizes, ['<s']));         // (max-width: 767px)
-console.log(buildMediaQuery(sizes, ['>s', '<=m']));  // (min-width: 769px) and (max-width: 992px)
-console.log(buildMediaQuery(sizes, ['>=s', '<=m'])); // (min-width: 768px) and (max-width: 992px)
+console.log(buildMediaQuery(sizes, ['<s']));                  // (max-width: 767px)
+console.log(buildMediaQuery(sizes, ['<s', '(hover: none)'])); // (max-width: 767px) and (hover: none)
+console.log(buildMediaQuery(sizes, ['>s', '<=m']));           // (min-width: 769px) and (max-width: 992px)
+console.log(buildMediaQuery(sizes, ['>=s', '<=m']));          // (min-width: 768px) and (max-width: 992px)
 ```
